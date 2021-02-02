@@ -1,0 +1,193 @@
+<?xml version="1.0" ?>
+<robot name="rvbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find rvbot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find rvbot_description)/urdf/rvbot.trans" />
+<xacro:include filename="$(find rvbot_description)/urdf/rvbot.gazebo" />
+
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.010750282190404019 0.0002357471312770814 0.14382585073848905"/>
+    <mass value="6.003308942574216"/>
+    <inertia ixx="0.051161" ixy="-2.2e-05" ixz="-0.004545" iyy="0.041667" iyz="-0.0001" izz="0.030224"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rvbot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rvbot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_right_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.2983705934591556e-17 -0.02930159298956944 -2.0539927481078024e-07"/>
+    <mass value="5.498840966427112"/>
+    <inertia ixx="0.006912" ixy="0.0" ixz="0.0" iyy="0.010753" iyz="-0.0" izz="0.006912"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 0.14 -0.061983"/>
+    <geometry>
+      <mesh filename="package://rvbot_description/meshes/wheel_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 0.14 -0.061983"/>
+    <geometry>
+      <mesh filename="package://rvbot_description/meshes/wheel_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_left_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.2983705934591556e-17 0.02930159298956947 -2.0539927483159692e-07"/>
+    <mass value="5.498840966427112"/>
+    <inertia ixx="0.006912" ixy="0.0" ixz="0.0" iyy="0.010753" iyz="0.0" izz="0.006912"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.14 -0.061983"/>
+    <geometry>
+      <mesh filename="package://rvbot_description/meshes/wheel_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.14 -0.061983"/>
+    <geometry>
+      <mesh filename="package://rvbot_description/meshes/wheel_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_front_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.1 0.0 -0.02052622199592666"/>
+    <mass value="0.10090664703636518"/>
+    <inertia ixx="1.7e-05" ixy="-0.0" ixz="-0.0" iyy="1.7e-05" iyz="0.0" izz="5e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.04425"/>
+    <geometry>
+      <mesh filename="package://rvbot_description/meshes/caster_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.04425"/>
+    <geometry>
+      <mesh filename="package://rvbot_description/meshes/caster_front_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_back_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.10000000000000002 0.0 -0.02052622199592667"/>
+    <mass value="0.10090664703636519"/>
+    <inertia ixx="1.7e-05" ixy="-0.0" ixz="0.0" iyy="1.7e-05" iyz="0.0" izz="5e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.04425"/>
+    <geometry>
+      <mesh filename="package://rvbot_description/meshes/caster_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.04425"/>
+    <geometry>
+      <mesh filename="package://rvbot_description/meshes/caster_back_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_bottom_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.011999996295019591 -4.7482720637347705e-07 0.004999999999999977"/>
+    <mass value="0.26048711836780625"/>
+    <inertia ixx="7.1e-05" ixy="0.0" ixz="-0.0" iyy="7.1e-05" iyz="0.0" izz="0.000138"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.023994 -0.000583 -0.23675"/>
+    <geometry>
+      <mesh filename="package://rvbot_description/meshes/lidar_bottom_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.023994 -0.000583 -0.23675"/>
+    <geometry>
+      <mesh filename="package://rvbot_description/meshes/lidar_bottom_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_top_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-3.704980405805358e-09 -4.7482720637456125e-07 0.005000000000000032"/>
+    <mass value="0.26048711836780625"/>
+    <inertia ixx="7.1e-05" ixy="0.0" ixz="-0.0" iyy="7.1e-05" iyz="0.0" izz="0.000138"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.035994 -0.000583 -0.24675"/>
+    <geometry>
+      <mesh filename="package://rvbot_description/meshes/lidar_top_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.035994 -0.000583 -0.24675"/>
+    <geometry>
+      <mesh filename="package://rvbot_description/meshes/lidar_top_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="motor_right" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 -0.14 0.061983"/>
+  <parent link="base_link"/>
+  <child link="wheel_right_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="motor_left" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.14 0.061983"/>
+  <parent link="base_link"/>
+  <child link="wheel_left_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid3" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.04425"/>
+  <parent link="base_link"/>
+  <child link="caster_front_1"/>
+</joint>
+
+<joint name="Rigid4" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.04425"/>
+  <parent link="base_link"/>
+  <child link="caster_back_1"/>
+</joint>
+
+<joint name="lidar_joint_bottom" type="fixed">
+  <origin rpy="0 0 0" xyz="0.023994 0.000583 0.23675"/>
+  <parent link="base_link"/>
+  <child link="lidar_bottom_1"/>
+</joint>
+
+<joint name="lidar_joint_top" type="fixed">
+  <origin rpy="0 0 0" xyz="0.012 0.0 0.01"/>
+  <parent link="lidar_bottom_1"/>
+  <child link="lidar_top_1"/>
+</joint>
+
+</robot>
