@@ -1,4 +1,4 @@
 # rvbot
 This is 2 Wheel Drive SLAM Robot
 
-Conponents Used : 
+Components Used : 
