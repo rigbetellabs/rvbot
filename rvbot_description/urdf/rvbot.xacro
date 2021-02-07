@@ -19,7 +19,7 @@
     <geometry>
       <mesh filename="package://rvbot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="white"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -40,7 +40,7 @@
     <geometry>
       <mesh filename="package://rvbot_description/meshes/wheel_right.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="black"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 0.14 -0.061983"/>
@@ -61,7 +61,7 @@
     <geometry>
       <mesh filename="package://rvbot_description/meshes/wheel_left.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="black"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 -0.14 -0.061983"/>
@@ -82,7 +82,7 @@
     <geometry>
       <mesh filename="package://rvbot_description/meshes/caster_front.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.04425"/>
@@ -103,7 +103,7 @@
     <geometry>
       <mesh filename="package://rvbot_description/meshes/caster_back.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.04425"/>
@@ -124,7 +124,7 @@
     <geometry>
       <mesh filename="package://rvbot_description/meshes/lidar_bottom.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.023994 -0.000583 -0.23675"/>
@@ -145,7 +145,7 @@
     <geometry>
       <mesh filename="package://rvbot_description/meshes/lidar_top.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.035994 -0.000583 -0.24675"/>

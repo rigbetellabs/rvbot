@@ -1,8 +1,20 @@
 <?xml version="1.0" ?>
 <robot name="rvbot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<material name="silver">
-  <color rgba="0.700 0.700 0.700 1.000"/>
+<material name="white">
+  <color rgba="1.000 1.000 1.000 1.000"/>
+</material>
+
+<material name="black">
+  <color rgba="0.000 0.000 0.000 1.000"/>
+</material>
+
+<material name="blue">
+  <color rgba="0.000 0.000 1.000 1.000"/>
+</material>
+
+<material name="grey">
+  <color rgba="0.500 0.500 0.500 1.000"/>
 </material>
 
 </robot>
