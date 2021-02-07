@@ -1,10 +1,11 @@
 <?xml version="1.0" ?>
 <robot name="rvbot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<xacro:property name="body_color" value="Gazebo/Silver" />
-<xacro:property name="lidar_top_color" value="Gazebo/Blue" />
+<xacro:property name="body_color" value="Gazebo/White" />
+<xacro:property name="lidar_color" value="Gazebo/Blue" />
 <xacro:property name="wheels_color" value="Gazebo/Black" />
 <xacro:property name="caster_color" value="Gazebo/Grey" />
+
 
 <gazebo reference="base_link">
   <material>${body_color}</material>  
@@ -27,11 +28,11 @@
 </gazebo>
 
 <gazebo reference="lidar_bottom">
-  <material>${body_color}</material>  
+  <material>${lidar_color}</material>  
 </gazebo>
 
 <gazebo reference="lidar_top">
-  <material>${lidar_top_color}</material>  
+  <material>${lidar_color}</material>  
 </gazebo>
 
 </robot>
