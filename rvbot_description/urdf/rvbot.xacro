@@ -3,7 +3,10 @@
 
 <xacro:include filename="$(find rvbot_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find rvbot_description)/urdf/rvbot.trans" />
-<xacro:include filename="$(find rvbot_description)/urdf/rvbot.gazebo" />
+
+<xacro:include filename="$(find rvbot_description)/gazebo/rvbot_materials.gazebo" />
+<xacro:include filename="$(find rvbot_description)/gazebo/rvbot_physics.gazebo" />
+<xacro:include filename="$(find rvbot_description)/gazebo/rvbot_plugins.gazebo" />
 
 <link name="base_link">
   <inertial>
@@ -156,7 +159,7 @@
   <origin rpy="0 0 0" xyz="0.0 -0.14 0.061983"/>
   <parent link="base_link"/>
   <child link="wheel_right"/>
-  <axis xyz="0.0 -1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="motor_left" type="continuous">
