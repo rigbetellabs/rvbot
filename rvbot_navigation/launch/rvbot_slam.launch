@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<launch>
+
+  	<include file="$(find rvbot_navigation)/launch/rvbot_gmapping.launch"/>
+
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find rvbot_gazebo)/rviz/mapping.rviz" required="true"/>
+  
+</launch>
