@@ -4,16 +4,6 @@
 #include <std_msgs/Int64.h>
 #include <std_msgs/String.h>
 #include <geometry_msgs/Twist.h>
-#include "I2Cdev.h"
-#include "MPU6050.h"
-#include "Wire.h"
-
-
-//MPU6050 Accelerometer 
-MPU6050 accelgyro;
-
-int16_t ax, ay, az;
-int16_t gx, gy, gz;
 
 
 #define LeftEN 2          //green     ENA
@@ -44,11 +34,9 @@ ros::NodeHandle nh;
 std_msgs::Int64 le;
 std_msgs::Int64 re;
 geometry_msgs::Twist msg;
-std_msgs::String imu_msg;
 
 ros::Publisher lencoder("lwheel", &le);
 ros::Publisher rencoder("rwheel", &re);
-ros::Publisher imu("/serial_imu", &imu_msg);
 
 void forward()
 { 
@@ -158,16 +146,11 @@ ros::Subscriber <geometry_msgs::Twist> sub("cmd_vel", callback);
 
 void setup()
 {
-  Wire.begin();
   nh.initNode();
   nh.subscribe(sub);
 
   //Serial.begin(115200);
 
-  //imu initialize
-  accelgyro.initialize();
-  accelgyro.setI2CBypassEnabled(true);
-  
   pinMode (LEncoderA, INPUT);
   pinMode (LEncoderB, INPUT);
   pinMode (REncoderA, INPUT);
@@ -177,7 +160,6 @@ void setup()
   RightLastState = digitalRead(REncoderA);
   nh.advertise(lencoder);
   nh.advertise(rencoder);
-  nh.advertise(imu);
 
   analogWrite(LeftEN, motorspeed);
 analogWrite(RightEN, motorspeed);
@@ -187,8 +169,6 @@ analogWrite(RightEN, motorspeed);
 void loop()
 {
   LeftState = digitalRead(LEncoderA);
-  RightState = digitalRead(REncoderA);
-  
   if (LeftState != LeftLastState)
   {
     if (digitalRead(LEncoderB) != LeftState)
@@ -201,9 +181,12 @@ void loop()
     }
     
   }
+  le.data = LeftCounter;
+    lencoder.publish(&le);
+      LeftLastState = LeftState;
 
   
-
+  RightState = digitalRead(REncoderA);
   if (RightState != RightLastState)
   {
     if (digitalRead(REncoderB) != RightState)
@@ -216,35 +199,19 @@ void loop()
     }
     
   }
+  re.data = RightCounter;
+    rencoder.publish(&re);
 
-  le.data = LeftCounter;
-    lencoder.publish(&le);
+
+  RightLastState = RightState;
+
+  
     //Serial.print("Left Position: ");
     //Serial.print(LeftCounter);
     //Serial.print("\t");
     //Serial.print("Right Position: ");
     //Serial.println(RightCounter);
-    re.data = RightCounter;
-    rencoder.publish(&re);
-
-  LeftLastState = LeftState;
-  RightLastState = RightState;
-
-
-  // read raw accel/gyro measurements from device
-  accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
-  String AX = String(ax);
-  String AY = String(ay);
-  String AZ = String(az);
-  String GX = String(gx);
-  String GY = String(gy);
-  String GZ = String(gz);
-  String data = "A" + AX + "B"+ AY + "C" + AZ + "D" + GX + "E" + GY + "F" + GZ + "G" ;
-  int length = data.indexOf("G") +2;
-  char data_final[length+1];
-  data.toCharArray(data_final, length+1);
-  imu_msg.data = data_final;
-  imu.publish(&imu_msg);
+    
   
   nh.spinOnce();
   
