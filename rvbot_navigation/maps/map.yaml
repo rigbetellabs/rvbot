@@ -1,4 +1,4 @@
-image: /home/shubhu/catkin_ws/src/rvbot/rvbot_navigation/map.pgm
+image: /home/shubhu/catkin_ws/src/rvbot/rvbot_navigation/maps/map.pgm
 resolution: 0.050000
 origin: [-15.400000, -13.800000, 0.000000]
 negate: 0

@@ -51,7 +51,8 @@
   <node pkg="rvbot_bringup" type="twist_to_motors.py" name="twist_to_motors" output="screen"/>
   <node pkg="rvbot_bringup" type="diff_tf.py" name="diff_tf" output="screen"/> 
   <node pkg="rvbot_bringup" type="wheel_vel_pub.py" name="wheel_vel_pub" output="screen"/>
-  
+
+  <include file="$(find rvbot_bringup)/launch/irl_spawn.launch"/>
   <include file="$(find rvbot_bringup)/launch/ydlidar.launch"/>
   <!--<include file="$(find rvbot_navigation)/launch/gmapping.launch"/>-->
 

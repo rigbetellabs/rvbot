@@ -33,12 +33,14 @@ std::vector<float> split(const std::string &s, char delim) {
 
 int main(int argc, char * argv[]) {
 
+    /*
     printf("__   ______  _     ___ ____    _    ____  \n");
     printf("\\ \\ / /  _ \\| |   |_ _|  _ \\  / \\  |  _ \\ \n");
     printf(" \\ V /| | | | |    | || | | |/ _ \\ | |_) | \n");
     printf("  | | | |_| | |___ | || |_| / ___ \\|  _ <  \n");
     printf("  |_| |____/|_____|___|____/_/   \\_\\_| \\_\\ \n");
     printf("\n");
+    */
     fflush(stdout);
     ros::init(argc, argv, "ydlidar_node"); 
 
@@ -131,8 +133,15 @@ int main(int argc, char * argv[]) {
             scan_msg.angle_min = scan.config.min_angle;
             scan_msg.angle_max = scan.config.max_angle;
             scan_msg.angle_increment = scan.config.ang_increment;
-            scan_msg.scan_time = scan.config.scan_time;
-            scan_msg.time_increment = scan.config.time_increment;
+
+            //scan_msg.scan_time = scan.config.scan_time;
+            //scan_msg.time_increment = scan.config.time_increment;
+            
+            //double scan_time = (tim_scan_end - tim_scan_start)/1000000000.;
+            
+            scan_msg.scan_time = scan.config.scan_time/1000000000.0;
+            scan_msg.time_increment = scan.config.time_increment/1000000000.0;
+            
             scan_msg.range_min = scan.config.min_range;
             scan_msg.range_max = scan.config.max_range;
             
