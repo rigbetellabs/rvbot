@@ -3,12 +3,12 @@
 <launch>
 
   	<include file="$(find rvbot_navigation)/launch/rvbot_gmapping.launch"/>
-   	<include file="$(find rvbot_description)/launch/display.launch"/> 
-<!--
+
+
   <node
     name="rviz"
     pkg="rviz"
     type="rviz"
-    args="-d $(find rvbot_gazebo)/rviz/mapping.rviz" required="true"/>
-  -->
+    args="-d $(find rvbot_navigation)/rviz/mapping.rviz" required="true"/>
+
 </launch>
