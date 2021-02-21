@@ -4,7 +4,7 @@
   <node pkg="tf"
         type="static_transform_publisher"
         name="link1_broadcaster"
-        args="0 0 0 0 0 0 base_footprint laser 100" />
+        args="0 0 0 0 0 0 base_link laser 100" />
 
   
   <node pkg="rosserial_python" type="serial_node.py" name="serial_node">
@@ -13,8 +13,8 @@
   </node>
 
 
-  <rosparam param="base_width">0.26</rosparam>
-  <rosparam param="ticks_meter">891</rosparam>
+  <rosparam param="base_width">0.34</rosparam>
+  <rosparam param="ticks_meter">101</rosparam>
 
 
 

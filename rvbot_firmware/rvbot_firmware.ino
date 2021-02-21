@@ -19,14 +19,14 @@ int16_t gx, gy, gz;
 #define LeftEN 2          //green     ENA
 #define RightEN 3         //orange      ENB
 
-#define LeftForward 25    //green        IN1
-#define LeftBackward 23   //red    IN2
-#define RightForward 24   //yellow    IN3
-#define RightBackward 22  //orange     IN4
+#define LeftForward 25    //green   //red    //grey     IN1
+#define LeftBackward 23   //red     //green  //black        IN2
+#define RightForward 24   //yellow  //orange //white         IN3
+#define RightBackward 22  //orange  //yellow //yeoolow         IN4
 
-#define LEncoderA 27      //grey 
+#define LEncoderA 27      //grey  //brown
 #define LEncoderB 29      //yellow
-#define REncoderA 26      //blue
+#define REncoderA 26      //blue    //red
 #define REncoderB 28      //purple
 
 #define motorspeed 75
