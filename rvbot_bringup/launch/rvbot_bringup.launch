@@ -8,7 +8,7 @@
 
 
   <rosparam param="base_width">0.34</rosparam>
-  <rosparam param="ticks_meter">101</rosparam>
+  <rosparam param="ticks_meter">76</rosparam>
 
 
 
