@@ -1,8 +1,6 @@
 #include <SoftwareSerial.h>
 #include <ros.h>
-#include <rvbot_bringup/MotorSpeed.h>
 #include <std_msgs/Int64.h>
-#include <std_msgs/String.h>
 #include <geometry_msgs/Twist.h>
 
 
@@ -19,7 +17,7 @@
 #define REncoderA 26      //blue    //red
 #define REncoderB 28      //purple
 
-#define motorspeed 75
+#define motorspeed 70
 
 
 
